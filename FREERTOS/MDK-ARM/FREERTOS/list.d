@@ -1,0 +1,12 @@
+freertos\list.o: C:/Users/27756/STM32Cube/Repository/STM32Cube_FW_F4_V1.28.1/Middlewares/Third_Party/FreeRTOS/Source/list.c
+freertos\list.o: E:\keil\ARM\ARM_Compiler_5.06u7\Bin\..\include\stdlib.h
+freertos\list.o: C:/Users/27756/STM32Cube/Repository/STM32Cube_FW_F4_V1.28.1/Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
+freertos\list.o: E:\keil\ARM\ARM_Compiler_5.06u7\Bin\..\include\stddef.h
+freertos\list.o: E:\keil\ARM\ARM_Compiler_5.06u7\Bin\..\include\stdint.h
+freertos\list.o: ../Core/Inc/FreeRTOSConfig.h
+freertos\list.o: C:/Users/27756/STM32Cube/Repository/STM32Cube_FW_F4_V1.28.1/Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
+freertos\list.o: C:/Users/27756/STM32Cube/Repository/STM32Cube_FW_F4_V1.28.1/Middlewares/Third_Party/FreeRTOS/Source/include/portable.h
+freertos\list.o: C:/Users/27756/STM32Cube/Repository/STM32Cube_FW_F4_V1.28.1/Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h
+freertos\list.o: C:/Users/27756/STM32Cube/Repository/STM32Cube_FW_F4_V1.28.1/Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/portmacro.h
+freertos\list.o: C:/Users/27756/STM32Cube/Repository/STM32Cube_FW_F4_V1.28.1/Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h
+freertos\list.o: C:/Users/27756/STM32Cube/Repository/STM32Cube_FW_F4_V1.28.1/Middlewares/Third_Party/FreeRTOS/Source/include/list.h

@@ -1,0 +1,16 @@
+freertos\tasks.o: C:/Users/27756/STM32Cube/Repository/STM32Cube_FW_F4_V1.28.1/Middlewares/Third_Party/FreeRTOS/Source/tasks.c
+freertos\tasks.o: E:\keil\ARM\ARM_Compiler_5.06u7\Bin\..\include\stdlib.h
+freertos\tasks.o: E:\keil\ARM\ARM_Compiler_5.06u7\Bin\..\include\string.h
+freertos\tasks.o: C:/Users/27756/STM32Cube/Repository/STM32Cube_FW_F4_V1.28.1/Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
+freertos\tasks.o: E:\keil\ARM\ARM_Compiler_5.06u7\Bin\..\include\stddef.h
+freertos\tasks.o: E:\keil\ARM\ARM_Compiler_5.06u7\Bin\..\include\stdint.h
+freertos\tasks.o: ../Core/Inc/FreeRTOSConfig.h
+freertos\tasks.o: C:/Users/27756/STM32Cube/Repository/STM32Cube_FW_F4_V1.28.1/Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
+freertos\tasks.o: C:/Users/27756/STM32Cube/Repository/STM32Cube_FW_F4_V1.28.1/Middlewares/Third_Party/FreeRTOS/Source/include/portable.h
+freertos\tasks.o: C:/Users/27756/STM32Cube/Repository/STM32Cube_FW_F4_V1.28.1/Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h
+freertos\tasks.o: C:/Users/27756/STM32Cube/Repository/STM32Cube_FW_F4_V1.28.1/Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/portmacro.h
+freertos\tasks.o: C:/Users/27756/STM32Cube/Repository/STM32Cube_FW_F4_V1.28.1/Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h
+freertos\tasks.o: C:/Users/27756/STM32Cube/Repository/STM32Cube_FW_F4_V1.28.1/Middlewares/Third_Party/FreeRTOS/Source/include/task.h
+freertos\tasks.o: C:/Users/27756/STM32Cube/Repository/STM32Cube_FW_F4_V1.28.1/Middlewares/Third_Party/FreeRTOS/Source/include/list.h
+freertos\tasks.o: C:/Users/27756/STM32Cube/Repository/STM32Cube_FW_F4_V1.28.1/Middlewares/Third_Party/FreeRTOS/Source/include/timers.h
+freertos\tasks.o: C:/Users/27756/STM32Cube/Repository/STM32Cube_FW_F4_V1.28.1/Middlewares/Third_Party/FreeRTOS/Source/include/stack_macros.h

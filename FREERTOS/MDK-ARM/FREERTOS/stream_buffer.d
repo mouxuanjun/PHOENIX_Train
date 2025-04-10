@@ -1,0 +1,14 @@
+freertos\stream_buffer.o: C:/Users/27756/STM32Cube/Repository/STM32Cube_FW_F4_V1.28.1/Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c
+freertos\stream_buffer.o: E:\keil\ARM\ARM_Compiler_5.06u7\Bin\..\include\stdint.h
+freertos\stream_buffer.o: E:\keil\ARM\ARM_Compiler_5.06u7\Bin\..\include\string.h
+freertos\stream_buffer.o: C:/Users/27756/STM32Cube/Repository/STM32Cube_FW_F4_V1.28.1/Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
+freertos\stream_buffer.o: E:\keil\ARM\ARM_Compiler_5.06u7\Bin\..\include\stddef.h
+freertos\stream_buffer.o: ../Core/Inc/FreeRTOSConfig.h
+freertos\stream_buffer.o: C:/Users/27756/STM32Cube/Repository/STM32Cube_FW_F4_V1.28.1/Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
+freertos\stream_buffer.o: C:/Users/27756/STM32Cube/Repository/STM32Cube_FW_F4_V1.28.1/Middlewares/Third_Party/FreeRTOS/Source/include/portable.h
+freertos\stream_buffer.o: C:/Users/27756/STM32Cube/Repository/STM32Cube_FW_F4_V1.28.1/Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h
+freertos\stream_buffer.o: C:/Users/27756/STM32Cube/Repository/STM32Cube_FW_F4_V1.28.1/Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/portmacro.h
+freertos\stream_buffer.o: C:/Users/27756/STM32Cube/Repository/STM32Cube_FW_F4_V1.28.1/Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h
+freertos\stream_buffer.o: C:/Users/27756/STM32Cube/Repository/STM32Cube_FW_F4_V1.28.1/Middlewares/Third_Party/FreeRTOS/Source/include/task.h
+freertos\stream_buffer.o: C:/Users/27756/STM32Cube/Repository/STM32Cube_FW_F4_V1.28.1/Middlewares/Third_Party/FreeRTOS/Source/include/list.h
+freertos\stream_buffer.o: C:/Users/27756/STM32Cube/Repository/STM32Cube_FW_F4_V1.28.1/Middlewares/Third_Party/FreeRTOS/Source/include/stream_buffer.h
