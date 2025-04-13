@@ -48,9 +48,7 @@
 
 /* USER CODE END Variables */
 osThreadId defaultTaskHandle;
-osThreadId led1redHandle;
-osThreadId led2greenHandle;
-osThreadId led3Handle;
+osThreadId LEDTaskHandle;
 
 /* Private function prototypes -----------------------------------------------*/
 /* USER CODE BEGIN FunctionPrototypes */
@@ -58,9 +56,7 @@ osThreadId led3Handle;
 /* USER CODE END FunctionPrototypes */
 
 void StartDefaultTask(void const * argument);
-void StartTask02(void const * argument);
-void led2_task(void const * argument);
-void led3_task(void const * argument);
+void LED_task(void const * argument);
 
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
 
@@ -111,17 +107,9 @@ void MX_FREERTOS_Init(void) {
   osThreadDef(defaultTask, StartDefaultTask, osPriorityNormal, 0, 128);
   defaultTaskHandle = osThreadCreate(osThread(defaultTask), NULL);
 
-  /* definition and creation of led1red */
-  osThreadDef(led1red, StartTask02, osPriorityLow, 0, 128);
-  led1redHandle = osThreadCreate(osThread(led1red), NULL);
-
-  /* definition and creation of led2green */
-  osThreadDef(led2green, led2_task, osPriorityLow, 0, 128);
-  led2greenHandle = osThreadCreate(osThread(led2green), NULL);
-
-  /* definition and creation of led3 */
-  osThreadDef(led3, led3_task, osPriorityLow, 0, 128);
-  led3Handle = osThreadCreate(osThread(led3), NULL);
+  /* definition and creation of LEDTask */
+  osThreadDef(LEDTask, LED_task, osPriorityLow, 0, 256);
+  LEDTaskHandle = osThreadCreate(osThread(LEDTask), NULL);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
@@ -136,7 +124,7 @@ void MX_FREERTOS_Init(void) {
   * @retval None
   */
 /* USER CODE END Header_StartDefaultTask */
-__weak void StartDefaultTask(void const * argument)
+void StartDefaultTask(void const * argument)
 {
   /* USER CODE BEGIN StartDefaultTask */
   /* Infinite loop */
@@ -147,58 +135,22 @@ __weak void StartDefaultTask(void const * argument)
   /* USER CODE END StartDefaultTask */
 }
 
-/* USER CODE BEGIN Header_StartTask02 */
+/* USER CODE BEGIN Header_LED_task */
 /**
-* @brief Function implementing the led1red thread.
+* @brief Function implementing the LEDTask thread.
 * @param argument: Not used
 * @retval None
 */
-/* USER CODE END Header_StartTask02 */
-__weak void StartTask02(void const * argument)
+/* USER CODE END Header_LED_task */
+__weak void LED_task(void const * argument)
 {
-  /* USER CODE BEGIN StartTask02 */
+  /* USER CODE BEGIN LED_task */
   /* Infinite loop */
   for(;;)
   {
     osDelay(1);
   }
-  /* USER CODE END StartTask02 */
-}
-
-/* USER CODE BEGIN Header_led2_task */
-/**
-* @brief Function implementing the led2green thread.
-* @param argument: Not used
-* @retval None
-*/
-/* USER CODE END Header_led2_task */
-__weak void led2_task(void const * argument)
-{
-  /* USER CODE BEGIN led2_task */
-  /* Infinite loop */
-  for(;;)
-  {
-    osDelay(1);
-  }
-  /* USER CODE END led2_task */
-}
-
-/* USER CODE BEGIN Header_led3_task */
-/**
-* @brief Function implementing the led3 thread.
-* @param argument: Not used
-* @retval None
-*/
-/* USER CODE END Header_led3_task */
-__weak void led3_task(void const * argument)
-{
-  /* USER CODE BEGIN led3_task */
-  /* Infinite loop */
-  for(;;)
-  {
-    osDelay(1);
-  }
-  /* USER CODE END led3_task */
+  /* USER CODE END LED_task */
 }
 
 /* Private application code --------------------------------------------------*/
