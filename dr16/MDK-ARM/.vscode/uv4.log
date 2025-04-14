@@ -1,0 +1,30 @@
+Load "dr16\\dr16.axf" 
+Set JLink Project File to "e:\robomaster\dr16\MDK-ARM\JLinkSettings.ini"* JLink Info: Device "STM32F407IG" selected.
+
+JLink info:
+------------
+DLL: V7.98c, compiled Aug  7 2024 15:37:06
+Firmware: J-Link ARM-OB STM32 compiled Aug 22 2012 19:52:04
+Hardware: V7.00
+S/N : 20090929 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash,GDBFull 
+
+* JLink Info: InitTarget() start
+* JLink Info: SWD selected. Executing JTAG -> SWD switching sequence.
+* JLink Info: Error: Failed to initialized DAP.
+* JLink Info: Can not attach to CPU. Trying connect under reset.
+* JLink Info: SWD selected. Executing JTAG -> SWD switching sequence.
+* JLink Info: Error: Failed to initialized DAP.
+* JLink Info: Connecting to CPU via connect under reset failed.
+* JLink Info: InitTarget() end - Took 106ms
+* JLink Info: Connect failed. Resetting via Reset pin and trying again.
+* JLink Info: InitTarget() start
+* JLink Info: SWD selected. Executing JTAG -> SWD switching sequence.
+* JLink Info: Error: Failed to initialized DAP.
+* JLink Info: Can not attach to CPU. Trying connect under reset.
+* JLink Info: SWD selected. Executing JTAG -> SWD switching sequence.
+* JLink Info: Error: Failed to initialized DAP.
+* JLink Info: Connecting to CPU via connect under reset failed.
+* JLink Info: InitTarget() end - Took 107ms
+Error: Flash Download failed  -  Target DLL has been cancelled
+Flash Load finished at 16:34:28

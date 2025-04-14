@@ -1,0 +1,85 @@
+T22F30 000:063.172   SEGGER J-Link V7.98c Log File
+T22F30 000:063.291   DLL Compiled: Aug  7 2024 15:37:06
+T22F30 000:063.298   Logging started @ 2025-04-14 08:34
+T22F30 000:063.303   Process: E:\keil\UV4\UV4.exe
+T22F30 000:063.311 - 63.308ms
+T22F30 000:063.323 JLINK_SetWarnOutHandler(...)
+T22F30 000:063.328 - 0.007ms
+T22F30 000:063.334 JLINK_OpenEx(...)
+T22F30 000:065.885   Firmware: J-Link ARM-OB STM32 compiled Aug 22 2012 19:52:04
+T22F30 000:066.322   Firmware: J-Link ARM-OB STM32 compiled Aug 22 2012 19:52:04
+T22F30 000:067.437   Hardware: V7.00
+T22F30 000:067.458   S/N: 20090929
+T22F30 000:067.465   OEM: SEGGER
+T22F30 000:067.473   Feature(s): RDI,FlashDL,FlashBP,JFlash,GDBFull
+T22F30 000:067.707   Bootloader: (Could not read)
+T22F30 000:068.206   TELNET listener socket opened on port 19021
+T22F30 000:068.265   WEBSRV WEBSRV_Init(): Starting webserver thread(s)
+T22F30 000:068.339   WEBSRV Webserver running on local port 19080
+T22F30 000:068.400   Looking for J-Link GUI Server exe at: E:\keil\ARM\Segger\JLinkGUIServer.exe
+T22F30 000:068.419   Looking for J-Link GUI Server exe at: E:\\JLink_V824\JLinkGUIServer.exe
+T22F30 000:068.429   Forking J-Link GUI Server: E:\\JLink_V824\JLinkGUIServer.exe
+T22F30 000:070.214   J-Link GUI Server info: "J-Link GUI server V8.24 "
+T22F30 000:070.556 - 7.216ms returns "O.K."
+T22F30 000:070.574 JLINK_GetEmuCaps()
+T22F30 000:070.581 - 0.005ms returns 0x88EA5833
+T22F30 000:070.589 JLINK_TIF_GetAvailable(...)
+T22F30 000:070.793 - 0.204ms
+T22F30 000:070.808 JLINK_SetErrorOutHandler(...)
+T22F30 000:070.813 - 0.005ms
+T22F30 000:070.833 JLINK_ExecCommand("ProjectFile = "e:\robomaster\dr16\MDK-ARM\JLinkSettings.ini"", ...). 
+T22F30 000:083.004 - 12.172ms returns 0x00
+T22F30 000:083.461 JLINK_ExecCommand("Device = STM32F407IGHx", ...). 
+T22F30 000:083.993   Device "STM32F407IG" selected.
+T22F30 000:084.236 - 0.766ms returns 0x00
+T22F30 000:084.246 JLINK_ExecCommand("DisableConnectionTimeout", ...). 
+T22F30 000:084.254   ERROR: Unknown command
+T22F30 000:084.261 - 0.008ms returns 0x01
+T22F30 000:084.268 JLINK_GetHardwareVersion()
+T22F30 000:084.276 - 0.005ms returns 70000
+T22F30 000:084.282 JLINK_GetDLLVersion()
+T22F30 000:084.287 - 0.004ms returns 79803
+T22F30 000:084.293 JLINK_GetOEMString(...)
+T22F30 000:084.299 JLINK_GetFirmwareString(...)
+T22F30 000:084.304 - 0.005ms
+T22F30 000:084.909 JLINK_GetDLLVersion()
+T22F30 000:084.916 - 0.006ms returns 79803
+T22F30 000:084.923 JLINK_GetCompileDateTime()
+T22F30 000:084.928 - 0.005ms
+T22F30 000:085.717 JLINK_GetFirmwareString(...)
+T22F30 000:085.723 - 0.006ms
+T22F30 000:085.902 JLINK_GetHardwareVersion()
+T22F30 000:085.907 - 0.005ms returns 70000
+T22F30 000:086.226 JLINK_GetSN()
+T22F30 000:086.234 - 0.007ms returns 20090929
+T22F30 000:086.473 JLINK_GetOEMString(...)
+T22F30 000:086.855 JLINK_TIF_Select(JLINKARM_TIF_SWD)
+T22F30 000:087.146 - 0.291ms returns 0x00
+T22F30 000:087.158 JLINK_HasError()
+T22F30 000:087.169 JLINK_SetSpeed(5000)
+T22F30 000:087.234 - 0.065ms
+T22F30 000:087.248 JLINK_GetId()
+T22F30 000:088.152   InitTarget() start
+T22F30 000:088.164    J-Link Script File: Executing InitTarget()
+T22F30 000:088.673   SWD selected. Executing JTAG -> SWD switching sequence.
+T22F30 000:090.457   Error: Failed to initialized DAP.
+T22F30 000:090.624   Can not attach to CPU. Trying connect under reset.
+T22F30 000:141.703   SWD selected. Executing JTAG -> SWD switching sequence.
+T22F30 000:143.484   Error: Failed to initialized DAP.
+T22F30 000:143.655   Connecting to CPU via connect under reset failed.
+T22F30 000:194.755   InitTarget() end - Took 106ms
+T22F30 000:194.942   Connect failed. Resetting via Reset pin and trying again.
+T22F30 000:256.363   InitTarget() start
+T22F30 000:256.377    J-Link Script File: Executing InitTarget()
+T22F30 000:256.703   SWD selected. Executing JTAG -> SWD switching sequence.
+T22F30 000:258.652   Error: Failed to initialized DAP.
+T22F30 000:258.824   Can not attach to CPU. Trying connect under reset.
+T22F30 000:310.497   SWD selected. Executing JTAG -> SWD switching sequence.
+T22F30 000:312.697   Error: Failed to initialized DAP.
+T22F30 000:312.921   Connecting to CPU via connect under reset failed.
+T22F30 000:364.553   InitTarget() end - Took 107ms
+T22F30 000:364.578 - 277.329ms returns 0x00000000
+T22F30 000:367.364 JLINK_Close()
+T22F30 000:376.968 - 9.604ms
+T22F30 000:377.000   
+T22F30 000:377.011   Closed
