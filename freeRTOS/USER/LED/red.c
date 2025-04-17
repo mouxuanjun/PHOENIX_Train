@@ -11,7 +11,7 @@ __HAL_TIM_SetCompare(&htim5,TIM_CHANNEL_3,i);
 	osDelay(50);
 }
 		for(int i = 100 ; i >= 0 ; i-- ){
-__HAL_TIM_SetCompare(&htim5,TIM_CHANNEL_3,i);
+__HAL_TIM_SetCompare(&htim5,TIM_CHANNEL_4,i);
 	osDelay(50);
 }
 	 }
