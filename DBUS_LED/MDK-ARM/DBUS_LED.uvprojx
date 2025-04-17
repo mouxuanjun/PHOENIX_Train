@@ -587,21 +587,6 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>DBUS</GroupName>
-          <Files>
-            <File>
-              <FileName>DBUS.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\DBUS\DBUS.c</FilePath>
-            </File>
-            <File>
-              <FileName>DBUS.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\DBUS\DBUS.h</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
           <GroupName>User</GroupName>
           <Files>
             <File>
@@ -613,6 +598,16 @@
               <FileName>LED.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\User\LED.h</FilePath>
+            </File>
+            <File>
+              <FileName>DBUS.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\DBUS.c</FilePath>
+            </File>
+            <File>
+              <FileName>DBUS.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\User\DBUS.h</FilePath>
             </File>
           </Files>
         </Group>
