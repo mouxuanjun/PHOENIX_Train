@@ -29,12 +29,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="28c9110f-b387-4e66-9485-ad619285b27c" name="更改" comment="">
-      <change afterPath="$PROJECT_DIR$/../0.Try_CPP/CMakeLists_template.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CMakeLists_template.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UserLib/Src/DR16_Remote.cpp" afterDir="false" />
-    </list>
+    <list default="true" id="28c9110f-b387-4e66-9485-ad619285b27c" name="更改" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -128,7 +123,7 @@
       <workItem from="1744809750487" duration="1219000" />
       <workItem from="1744862571663" duration="647000" />
       <workItem from="1744885979019" duration="3736000" />
-      <workItem from="1744893017217" duration="4562000" />
+      <workItem from="1744893017217" duration="5015000" />
     </task>
     <servers />
   </component>

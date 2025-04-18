@@ -30,10 +30,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="31c9ca73-7e1e-4fe0-a1d2-1751d93dd7dc" name="更改" comment="">
-      <change afterPath="$PROJECT_DIR$/CMakeLists_template.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../2.DR16_Remote/CMakeLists.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../2.DR16_Remote/CMakeLists_template.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../2.DR16_Remote/UserLib/Src/DR16_Remote.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2.DR16_Remote/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../2.DR16_Remote/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,7 +105,7 @@
       <option name="presentableId" value="Default" />
       <updated>1744887415887</updated>
       <workItem from="1744887417965" duration="3035000" />
-      <workItem from="1744893021264" duration="1484000" />
+      <workItem from="1744893021264" duration="1598000" />
     </task>
     <servers />
   </component>

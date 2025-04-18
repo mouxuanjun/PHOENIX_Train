@@ -1,3 +1,0 @@
-D:/RoboMaster/Embedded_train/2.DR16_Remote/cmake-build-debug/CMakeFiles/2.DR16_Remote.elf.dir
-D:/RoboMaster/Embedded_train/2.DR16_Remote/cmake-build-debug/CMakeFiles/edit_cache.dir
-D:/RoboMaster/Embedded_train/2.DR16_Remote/cmake-build-debug/CMakeFiles/rebuild_cache.dir
