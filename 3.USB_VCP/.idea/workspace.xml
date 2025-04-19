@@ -29,10 +29,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0849d22f-597f-425f-bf4d-7ce878dc1952" name="更改" comment="">
-      <change beforePath="$PROJECT_DIR$/../0.Try_CPP/.idea/editor.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../0.Try_CPP/.idea/editor.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../0.Try_CPP/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../0.Try_CPP/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../0.Try_CPP/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/../0.Try_CPP/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../2.DR16_Remote/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../2.DR16_Remote/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3.USB_VCP.ioc" beforeDir="false" afterPath="$PROJECT_DIR$/3.USB_VCP.ioc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/User_CPP/UserTask/Inc/USB_task.h" beforeDir="false" afterPath="$PROJECT_DIR$/User_CPP/UserTask/Inc/USB_task.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/User_CPP/UserTask/Src/USB_task.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/User_CPP/UserTask/Src/USB_task.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/3.USB_VCP.bin" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/3.USB_VCP.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/3.USB_VCP.elf" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/3.USB_VCP.elf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/3.USB_VCP.hex" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/3.USB_VCP.hex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/3.USB_VCP.map" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/3.USB_VCP.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.USB_VCP.elf.dir/USB_DEVICE/App/usbd_cdc_if.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.USB_VCP.elf.dir/USB_DEVICE/App/usbd_cdc_if.c.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.USB_VCP.elf.dir/User_CPP/UserTask/Src/USB_task.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.USB_VCP.elf.dir/User_CPP/UserTask/Src/USB_task.cpp.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,7 +135,7 @@
       <updated>1744972864013</updated>
       <workItem from="1744972875793" duration="14892000" />
       <workItem from="1745026294507" duration="947000" />
-      <workItem from="1745027618836" duration="4730000" />
+      <workItem from="1745027618836" duration="17356000" />
     </task>
     <servers />
   </component>

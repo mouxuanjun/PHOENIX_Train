@@ -4,11 +4,16 @@
 
 #ifndef USB_TASK_H
 #define USB_TASK_H
-
-
-
 #include "main.h"
 
+typedef struct {
+    char start ; //0 帧头取 's'
+    char type; //1 消息类型：上->下：0xA0 下->上：0xB0
+    char find_bool; //2 是否追踪
+    float yaw; //3-6 yaw数据
+    float pitch; //7-10 pitch数据
+    char end; //31 帧尾取'e'
+}msg_t;
 
 #ifdef __cplusplus
 extern "C"{

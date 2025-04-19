@@ -29,10 +29,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="28c9110f-b387-4e66-9485-ad619285b27c" name="更改" comment="">
-      <change beforePath="$PROJECT_DIR$/../0.Try_CPP/.idea/editor.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../0.Try_CPP/.idea/editor.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../0.Try_CPP/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../0.Try_CPP/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../0.Try_CPP/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/../0.Try_CPP/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.USB_VCP/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../3.USB_VCP/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.USB_VCP/3.USB_VCP.ioc" beforeDir="false" afterPath="$PROJECT_DIR$/../3.USB_VCP/3.USB_VCP.ioc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.USB_VCP/User_CPP/UserTask/Inc/USB_task.h" beforeDir="false" afterPath="$PROJECT_DIR$/../3.USB_VCP/User_CPP/UserTask/Inc/USB_task.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.USB_VCP/User_CPP/UserTask/Src/USB_task.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../3.USB_VCP/User_CPP/UserTask/Src/USB_task.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.USB_VCP/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/../3.USB_VCP/cmake-build-debug/.ninja_deps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.USB_VCP/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/../3.USB_VCP/cmake-build-debug/.ninja_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.USB_VCP/cmake-build-debug/3.USB_VCP.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../3.USB_VCP/cmake-build-debug/3.USB_VCP.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.USB_VCP/cmake-build-debug/3.USB_VCP.elf" beforeDir="false" afterPath="$PROJECT_DIR$/../3.USB_VCP/cmake-build-debug/3.USB_VCP.elf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.USB_VCP/cmake-build-debug/3.USB_VCP.hex" beforeDir="false" afterPath="$PROJECT_DIR$/../3.USB_VCP/cmake-build-debug/3.USB_VCP.hex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.USB_VCP/cmake-build-debug/3.USB_VCP.map" beforeDir="false" afterPath="$PROJECT_DIR$/../3.USB_VCP/cmake-build-debug/3.USB_VCP.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.USB_VCP/cmake-build-debug/CMakeFiles/3.USB_VCP.elf.dir/USB_DEVICE/App/usbd_cdc_if.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/../3.USB_VCP/cmake-build-debug/CMakeFiles/3.USB_VCP.elf.dir/USB_DEVICE/App/usbd_cdc_if.c.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.USB_VCP/cmake-build-debug/CMakeFiles/3.USB_VCP.elf.dir/User_CPP/UserTask/Src/USB_task.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/../3.USB_VCP/cmake-build-debug/CMakeFiles/3.USB_VCP.elf.dir/User_CPP/UserTask/Src/USB_task.cpp.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.USB_VCP/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/../3.USB_VCP/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
