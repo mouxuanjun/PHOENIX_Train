@@ -7,5 +7,8 @@ sshkey1.pub
 /2.DR16_Remote/.idea
 /2.DR16_Remote/cmake-build-debug
 /2.DR16_Remote/cmake-build-debug-*
+/3.DR16_Remote/.idea
+/3.DR16_Remote/cmake-build-debug
+/3.DR16_Remote/cmake-build-debug-*
 Learn_cpp.cpp
 Learn_cpp.exe
