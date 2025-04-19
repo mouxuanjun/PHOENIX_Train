@@ -45,6 +45,10 @@
 
 /* USER CODE BEGIN PV */
 uint16_t pwmval = 0;
+uint16_t buzzerval = 0;
+int tones[12] = {261,270,293,311,329,349,370,392,415,440,466,493};
+// int tones_arr[12] = {137931,133333,122866,115755,109422,103151,97297,91836,86746,81818,77253,73022};
+int tones_arr[12] = {45977,44444,40955,38585,36474,34383,32432,30612,28915,27272,25751,24340};
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -56,6 +60,22 @@ void MX_FREERTOS_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+void playtone(int num){
+  int arr = 0;
+  int tone = tones[num-1];
+  arr = 36000000.0/tone;
+  __HAL_TIM_SET_AUTORELOAD(&htim4,arr);
+  __HAL_TIM_SET_COMPARE(&htim4,TIM_CHANNEL_3,(int)arr/4);
+}
+void playtone_arr(int num){
+  int arr = tones_arr[num-1];
+  __HAL_TIM_SET_AUTORELOAD(&htim4,arr);
+  __HAL_TIM_SET_COMPARE(&htim4,TIM_CHANNEL_3,(int)arr/4);
+}
+void stoptone(){
+  __HAL_TIM_SET_COMPARE(&htim4,TIM_CHANNEL_3,1);
+}
+
 void led_task(void const * argument){
   while(1){
 	while(pwmval < 1000){
@@ -63,18 +83,59 @@ void led_task(void const * argument){
       __HAL_TIM_SetCompare(&htim5,TIM_CHANNEL_1,pwmval);	
 	  __HAL_TIM_SetCompare(&htim5,TIM_CHANNEL_2,pwmval);
       __HAL_TIM_SetCompare(&htim5,TIM_CHANNEL_3,pwmval);
-	  HAL_Delay(2);
+	  osDelay(2); 
 	}		
 	while(pwmval > 0){
       pwmval--;
       __HAL_TIM_SetCompare(&htim5,TIM_CHANNEL_1,pwmval);	
 	  __HAL_TIM_SetCompare(&htim5,TIM_CHANNEL_2,pwmval);
       __HAL_TIM_SetCompare(&htim5,TIM_CHANNEL_3,pwmval);
-	  HAL_Delay(2);
+	  osDelay(2); 
 	}
-   	 HAL_Delay(200);
+   	 osDelay(200); 
   }
 
+}
+
+
+void buzzer_task(void const * argument){
+
+    playtone_arr(2);
+    osDelay(250);
+    stoptone();
+    playtone_arr(3);
+    osDelay(250);
+    stoptone();
+    playtone_arr(6);
+    osDelay(350);
+    stoptone();
+
+
+
+	  // playtone(1);
+    // osDelay(500);
+    // stoptone();
+    // playtone(2);
+    // osDelay(500);
+    // stoptone();
+    // playtone(1);
+    // osDelay(500);
+    // stoptone();
+
+    __HAL_TIM_SET_AUTORELOAD(&htim4, 6000);
+    __HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_3, 0);
+
+    
+    HAL_TIM_PWM_Stop(&htim4, TIM_CHANNEL_3);
+    
+    
+//    osDelay(1000);
+//    osThreadTerminate(NULL);
+    
+	 while(1){
+	   osDelay(1000);	 
+	 }	 
+   
 }
 /* USER CODE END 0 */
 
@@ -107,12 +168,14 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   MX_TIM5_Init();
+  MX_TIM4_Init();
+  /* USER CODE BEGIN 2 */
+  HAL_TIM_Base_Init(&htim4);
   HAL_TIM_Base_Init(&htim5);
   HAL_TIM_PWM_Start(&htim5,TIM_CHANNEL_1);
   HAL_TIM_PWM_Start(&htim5,TIM_CHANNEL_2);
   HAL_TIM_PWM_Start(&htim5,TIM_CHANNEL_3);
-  /* USER CODE BEGIN 2 */
-
+  HAL_TIM_PWM_Start(&htim4,TIM_CHANNEL_3);
   /* USER CODE END 2 */
 
   /* Call init function for freertos objects (in freertos.c) */

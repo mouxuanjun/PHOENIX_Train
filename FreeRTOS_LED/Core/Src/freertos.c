@@ -48,6 +48,7 @@
 
 /* USER CODE END Variables */
 osThreadId LEDTaskHandle;
+osThreadId BuzzerTaskHandle;
 
 /* Private function prototypes -----------------------------------------------*/
 /* USER CODE BEGIN FunctionPrototypes */
@@ -55,6 +56,7 @@ osThreadId LEDTaskHandle;
 /* USER CODE END FunctionPrototypes */
 
 void led_task(void const * argument);
+void buzzer_task(void const * argument);
 
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
 
@@ -105,6 +107,10 @@ void MX_FREERTOS_Init(void) {
   osThreadDef(LEDTask, led_task, osPriorityNormal, 0, 128);
   LEDTaskHandle = osThreadCreate(osThread(LEDTask), NULL);
 
+  /* definition and creation of BuzzerTask */
+  osThreadDef(BuzzerTask, buzzer_task, osPriorityIdle, 0, 128);
+  BuzzerTaskHandle = osThreadCreate(osThread(BuzzerTask), NULL);
+
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
   /* USER CODE END RTOS_THREADS */
@@ -127,6 +133,24 @@ __weak void led_task(void const * argument)
     osDelay(1);
   }
   /* USER CODE END led_task */
+}
+
+/* USER CODE BEGIN Header_buzzer_task */
+/**
+* @brief Function implementing the BuzzerTask thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_buzzer_task */
+__weak void buzzer_task(void const * argument)
+{
+  /* USER CODE BEGIN buzzer_task */
+  /* Infinite loop */
+  for(;;)
+  {
+    osDelay(1);
+  }
+  /* USER CODE END buzzer_task */
 }
 
 /* Private application code --------------------------------------------------*/
