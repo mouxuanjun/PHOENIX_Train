@@ -30,8 +30,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="31c9ca73-7e1e-4fe0-a1d2-1751d93dd7dc" name="更改" comment="">
-      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/editor.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/editor.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../2.DR16_Remote/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../2.DR16_Remote/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -106,6 +107,9 @@
       <updated>1744887415887</updated>
       <workItem from="1744887417965" duration="3035000" />
       <workItem from="1744893021264" duration="1598000" />
+      <workItem from="1744938376880" duration="25000" />
+      <workItem from="1744977708415" duration="3158000" />
+      <workItem from="1745026297844" duration="598000" />
     </task>
     <servers />
   </component>

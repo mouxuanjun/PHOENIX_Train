@@ -1,0 +1,19 @@
+"D:\Program File\CLion 2024.2.2\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=D:/Program File/CLion 2024.2.2/bin/ninja/win/x64/ninja.exe" -G Ninja -S D:\RoboMaster\Embedded_train\3.USB_VCP -B D:\RoboMaster\Embedded_train\3.USB_VCP\cmake-build-debug
+-- The C compiler identification is GNU 12.3.1
+-- The CXX compiler identification is GNU 12.3.1
+-- The ASM compiler identification is GNU
+-- Found assembler: D:/Program Files/STM32CubeCLT_1.17.0/GNU-tools-for-STM32/bin/arm-none-eabi-gcc.exe
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: D:/Program Files/STM32CubeCLT_1.17.0/GNU-tools-for-STM32/bin/arm-none-eabi-gcc.exe - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: D:/Program Files/STM32CubeCLT_1.17.0/GNU-tools-for-STM32/bin/arm-none-eabi-g++.exe - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Minimal optimization, debug info included
+-- Configuring done (1.9s)
+-- Generating done (0.0s)
+-- Build files have been written to: D:/RoboMaster/Embedded_train/3.USB_VCP/cmake-build-debug
