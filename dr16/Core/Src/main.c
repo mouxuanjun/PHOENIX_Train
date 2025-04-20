@@ -58,7 +58,7 @@ void MX_FREERTOS_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-uint8_t tx_data[18];
+uint8_t rx_data[18];
 /* USER CODE END 0 */
 
 /**
@@ -93,7 +93,7 @@ int main(void)
   MX_DMA_Init();
   MX_USART3_UART_Init();
   /* USER CODE BEGIN 2 */
-	HAL_UART_Receive_DMA(&huart3,tx_data,18);
+	HAL_UART_Receive_DMA(&huart3,rx_data,18);
 
   /* USER CODE END 2 */
 

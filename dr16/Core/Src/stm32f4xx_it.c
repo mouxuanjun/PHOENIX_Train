@@ -61,7 +61,7 @@ extern TIM_HandleTypeDef htim1;
 
 /* USER CODE BEGIN EV */
 extern rc_info_t rc;
-extern uint8_t tx_data[18];
+extern uint8_t rx_data[18];
 /* USER CODE END EV */
 
 /******************************************************************************/
@@ -168,7 +168,7 @@ void DebugMon_Handler(void)
 void DMA1_Stream1_IRQHandler(void)
 {
   /* USER CODE BEGIN DMA1_Stream1_IRQn 0 */
-  Remotedata(&rc,tx_data);
+  Remotedata(&rc,rx_data);
   /* USER CODE END DMA1_Stream1_IRQn 0 */
   HAL_DMA_IRQHandler(&hdma_usart3_rx);
   /* USER CODE BEGIN DMA1_Stream1_IRQn 1 */
