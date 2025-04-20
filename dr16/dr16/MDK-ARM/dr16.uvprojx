@@ -593,22 +593,22 @@
             <File>
               <FileName>dr16.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\user\dr16.c</FilePath>
+              <FilePath>..\user\dr16.c</FilePath>
             </File>
             <File>
               <FileName>dr16.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\user\dr16.h</FilePath>
+              <FilePath>..\user\dr16.h</FilePath>
             </File>
             <File>
               <FileName>led.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\user\led.c</FilePath>
+              <FilePath>..\user\led.c</FilePath>
             </File>
             <File>
               <FileName>led.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\user\led.h</FilePath>
+              <FilePath>..\user\led.h</FilePath>
             </File>
           </Files>
         </Group>
