@@ -19,12 +19,14 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "cmsis_os.h"
+#include "can.h"
 #include "usb_device.h"
 #include "gpio.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "Middleware_CAN.h"
+#include "Device_GM6020.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -52,7 +54,10 @@
 void SystemClock_Config(void);
 void MX_FREERTOS_Init(void);
 /* USER CODE BEGIN PFP */
-
+// void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef * hcan) {
+//     CAN_Rx_Data(&hcan1);
+//     GM6020_update();
+// }
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -89,8 +94,16 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
+  MX_CAN1_Init();
+  MX_CAN2_Init();
   /* USER CODE BEGIN 2 */
-
+  cpp_main();
+  CAN_Init(&hcan1);
+  CAN_Init(&hcan2);
+  GM6020_1_Init(&hcan1);
+  GM6020_2_Init(&hcan1);
+  GM6020_3_Init(&hcan1);
+  GM6020_4_Init(&hcan1);
   /* USER CODE END 2 */
 
   /* Call init function for freertos objects (in cmsis_os2.c) */
@@ -105,7 +118,6 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-    cpp_main();
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */

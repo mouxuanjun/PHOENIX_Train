@@ -13,7 +13,8 @@ typedef struct {
     float yaw; //3-6 yaw数据
     float pitch; //7-10 pitch数据
     char end; //31 帧尾取'e'
-}msg_t;
+} usb_msg_t;
+
 
 #ifdef __cplusplus
 extern "C"{

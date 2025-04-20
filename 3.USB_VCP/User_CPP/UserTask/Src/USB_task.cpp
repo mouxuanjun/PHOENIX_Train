@@ -13,8 +13,8 @@ public:
     uint16_t CPP_myUSBRxNum;
     uint8_t CPP_myUSBTxData[64];
     uint16_t CPP_myUSBTxNum;
-    msg_t CPP_msg_from_minipc;
-    msg_t CPP_msg_to_minipc;
+    usb_msg_t CPP_msg_from_minipc;
+    usb_msg_t CPP_msg_to_minipc;
 
     void CPP_USBData_Init(void);
     void CPP_USBData_Process(void);
@@ -23,6 +23,9 @@ public:
     void CPP_USBData_SendMsg(char find_bool, float yaw, float pitch);
 };
 
+/**
+ * @brief 初始化接收来自视觉数据的帧格式配置
+ */
 void USB_Data::CPP_USBData_Init() {
     CPP_msg_from_minipc.start = 's';
     CPP_msg_from_minipc.end = 'e';
@@ -39,6 +42,9 @@ void USB_Data::CPP_USBData_Init() {
     CPP_msg_from_minipc.pitch = 0;
 }
 
+/**
+ * @brief 处理
+ */
 void USB_Data::CPP_USBData_Process(void) {
     if (CPP_myUSBRxNum) {
         if (CPP_myUSBRxData[1] == 0xA0) {
@@ -91,7 +97,7 @@ void USB_Data::CPP_USBData_SendMsg(char find_bool, float yaw, float pitch) {
     CPP_myUSBTxData[7] = float_pitch[1];
     CPP_myUSBTxData[8] = float_pitch[2];
     CPP_myUSBTxData[9] = float_pitch[3];
-    for (char i = 10; i < 30; i++) {
+    for (char i = 10; i < 30; i++) { //中间留空
         CPP_myUSBTxData[i] = 0x00;
     }
     CPP_myUSBTxData[31] = CPP_msg_to_minipc.end;

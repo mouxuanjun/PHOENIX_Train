@@ -32,7 +32,7 @@
 /* USER CODE BEGIN PV */
 /* Private variables ---------------------------------------------------------*/
 uint8_t myUSBRxData[64] = {0}; //接收数据缓存
-uint16_t myUSBRxNum = 0; //接收到的字节�?
+uint16_t myUSBRxNum = 0; //接收到的字节�??
 /* USER CODE END PV */
 
 /** @addtogroup STM32_USB_OTG_DEVICE_LIBRARY
@@ -264,7 +264,7 @@ static int8_t CDC_Receive_FS(uint8_t* Buf, uint32_t *Len)
   /* USER CODE BEGIN 6 */
   USBData_GetData(Buf,Len);
 
-  //指定下次数据存放的位�?
+  //指定下次数据存放的位�??
   USBD_CDC_SetRxBuffer(&hUsbDeviceFS, &Buf[0]);
   USBD_CDC_ReceivePacket(&hUsbDeviceFS);
   return (USBD_OK);
@@ -292,14 +292,14 @@ uint8_t CDC_Transmit_FS(uint8_t* Buf, uint16_t Len)
   // }
 
   uint32_t timeStart = HAL_GetTick();      //获取进入函数时的运行时间
-  while(hcdc->TxState) {                   //等待发�?�空�?
+  while(hcdc->TxState) {                   //等待发�?�空�??
     if (HAL_GetTick() - timeStart > 20) {  //等待超时ms
        return USBD_BUSY;                   //没有空闲就返回；忙就放弃发�??
     }
   }
 
   USBD_CDC_SetTxBuffer(&hUsbDeviceFS, Buf, Len);//把要发�?�的数据，复制到发�?�缓存中
-  result = USBD_CDC_TransmitPacket(&hUsbDeviceFS);//发�?�数据（只有被主机轮询到才可以发出到主机�?
+  result = USBD_CDC_TransmitPacket(&hUsbDeviceFS);//发�?�数据（只有被主机轮询到才可以发出到主机�??
   /* USER CODE END 7 */
   return result;
 }
