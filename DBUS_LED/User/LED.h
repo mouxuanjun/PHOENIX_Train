@@ -2,9 +2,8 @@
 #define __LED_H__
 
 #include "main.h"
+#include "DBUS.h"
 
-void LED_RedTask(void const * argument);
-void LED_GreenTask(void const * argument);
-void LED_BlueTask(void const * argument);
+void LEDTask(void const * argument);
 
 #endif

@@ -47,7 +47,8 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-extern uint8_t rx_data[18];
+rc_info_t rc_ctrl;
+uint8_t rx_data[18];
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
