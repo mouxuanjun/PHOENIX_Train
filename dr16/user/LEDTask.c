@@ -1,5 +1,8 @@
 #include "LEDTask.h"
 extern rc_info_t rc;
+extern mouse_info_t mouse;
+extern key_info_t key;
+
 void TASK_LED(void const * argument)
 {
 	while(1)

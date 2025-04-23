@@ -53,6 +53,8 @@
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 extern rc_info_t rc;
+extern mouse_info_t mouse;
+extern key_info_t key;
 extern uint8_t tx_data[18];
 /* USER CODE END 0 */
 
@@ -168,7 +170,9 @@ void DebugMon_Handler(void)
 void DMA1_Stream1_IRQHandler(void)
 {
   /* USER CODE BEGIN DMA1_Stream1_IRQn 0 */
-  RemoteDataProcess(&rc,tx_data);
+  RemoteDataProcess(&rc, tx_data);
+  MouseDataProcess(&mouse, tx_data);
+  KeyDataProcess(&key, tx_data);
   /* USER CODE END DMA1_Stream1_IRQn 0 */
   HAL_DMA_IRQHandler(&hdma_usart3_rx);
   /* USER CODE BEGIN DMA1_Stream1_IRQn 1 */
