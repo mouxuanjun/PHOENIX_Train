@@ -1,26 +1,26 @@
-#include "red.h"
+#include "led.h"
 #include "main.h"
 #include "dr16.h"
 
-extern rc_info_t rc;
+extern RC_Ctrl_t RC_CtrlData;
 
 void led(void const * argument)
 {
 	while(1)
 	{
-		if(rc.s1 == 1)
+		if(RC_CtrlData.remote.ch0 == 1)
 		{
 			HAL_GPIO_WritePin(GPIOH,GPIO_PIN_10,GPIO_PIN_SET);
 		    HAL_GPIO_WritePin(GPIOH,GPIO_PIN_11,GPIO_PIN_RESET);
 			HAL_GPIO_WritePin(GPIOH,GPIO_PIN_12,GPIO_PIN_RESET);
 		}
-		if(rc.s1 == 2)
+		if(RC_CtrlData.remote.ch0 == 200)
 		{
 			HAL_GPIO_WritePin(GPIOH,GPIO_PIN_10,GPIO_PIN_RESET);
 		    HAL_GPIO_WritePin(GPIOH,GPIO_PIN_11,GPIO_PIN_SET);
 			HAL_GPIO_WritePin(GPIOH,GPIO_PIN_12,GPIO_PIN_RESET);
 		}
-		if(rc.s1 == 3)
+		if(RC_CtrlData.remote.ch0 == 400)
 		{
 			HAL_GPIO_WritePin(GPIOH,GPIO_PIN_10,GPIO_PIN_RESET);
 		    HAL_GPIO_WritePin(GPIOH,GPIO_PIN_11,GPIO_PIN_RESET);

@@ -54,7 +54,7 @@
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-extern rc_info_t rc;
+
 extern uint8_t rx_data[18];
 /* USER CODE END 0 */
 
