@@ -4,10 +4,15 @@
 
 #include "can.h"
 #include "Middleware_CAN.hpp"
+#include "Device_DM4310.hpp"
 #include "Middleware_CAN.h"
 #include "Device_GM6020.hpp"
 #include "stm32f4xx_hal_can.h"
 
+extern DM4310 DM4310_1;
+extern DM4310 DM4310_2;
+extern DM4310 DM4310_3;
+extern DM4310 DM4310_4;
 extern GM6020_All GM6020_All1;
 
 void Class_CAN::CPP_CAN_Filter_Init() {
@@ -152,7 +157,28 @@ void CAN_GetData(CAN_HandleTypeDef* hcan, uint8_t RxData[], uint32_t* CAN_id) {
 void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef* hcan) {
     if (hcan->Instance == CAN1) {
         CPP_CAN1.CPP_CAN_Rx_Data();
-        GM6020_All1.Update();
+        switch(CPP_CAN1.CPP_CAN_Rx_CAN_id) {
+        case 0x205:case 0x206:case 0x207:case 0x208: {
+            GM6020_All1.Update();
+            break;
+        }
+        case 0x011:case 0x111:case 0x211:{
+            DM4310_1.Update();
+            break;
+        }
+        case 0x012:case 0x112:case 0x212:{
+            DM4310_2.Update();
+            break;
+        }
+        case 0x013:case 0x113:case 0x213:{
+            DM4310_3.Update();
+            break;
+        }
+        case 0x014:case 0x114:case 0x214:{
+            DM4310_4.Update();
+            break;
+        }
+        }
     }
 }
 

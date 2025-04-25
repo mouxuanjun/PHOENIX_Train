@@ -4,6 +4,7 @@
 
 #include "Algorithm_PID.hpp"
 #include "Algorithm_Math.hpp"
+#include "Device_DM4310.hpp"
 
 void Class_PID::Init(CPP_Enum_PID_Type pid_type, float CPP_K_P, float CPP_K_I, float CPP_K_D, float CPP_K_F,
                      float CPP_I_Out_Max, float CPP_Out_Max,
@@ -127,6 +128,16 @@ void Class_PID::CPP_TIM_Adjust_PeriodElapsedCallback() {
         }
         break;
     }
+    case DM4310_angle: {
+        //过圈保护
+        if (PID_Info.Target - PID_Info.Now > PI) {
+            PID_Info.Now += 2*PI;
+        }
+        else if (PID_Info.Target - PID_Info.Now < -PI) {
+            PID_Info.Target += 2*PI;
+        }
+        break;
+    }
     }
 
     error = PID_Info.Target - PID_Info.Now;
@@ -217,6 +228,16 @@ void Class_PID::CPP_TIM_Adjust_PeriodElapsedCallback() {
         }
         else if (temp_Target - temp_Pre_target < -4096) {
             temp_Target += 8192;
+        }
+        break;
+    }
+    case DM4310_angle: {
+        //过圈保护
+        if (temp_Target - temp_Pre_target > PI) {
+            temp_Pre_target += 2*PI;
+        }
+        else if (temp_Target - temp_Pre_target < -PI) {
+            temp_Target += 2*PI;
         }
         break;
     }

@@ -13,6 +13,7 @@ enum CPP_Enum_DFirst {
 enum CPP_Enum_PID_Type {
     speed = 1,
     GM6020_angle =2,
+    DM4310_angle = 3,
 };
 
 typedef struct {
