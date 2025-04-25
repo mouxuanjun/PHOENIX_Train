@@ -9,6 +9,6 @@ sshkey1.pub
 /2.DR16_Remote/cmake-build-debug-*
 /3.USB_VCP/.idea
 /3.USB_VCP/cmake-build-debug
-/3.USB_VCP/cmake-build-debug-*
+/3.USB_VCP/cmake-build-debug-
 Learn_cpp.cpp
 Learn_cpp.exe
