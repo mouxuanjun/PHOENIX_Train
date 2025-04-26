@@ -24,10 +24,9 @@ void usb_printf(const char *format, ...)
     CDC_Transmit_FS(tx_data, length);
 }
 
-	
 void vofa_Task(void const * argument)
 {
-  int8_t CDC_Init_FS();
+
   while(1)
   {
 		usb_printf("%d\n,%d\r\n",gm6020.mechanical_angle,gm6020.speed_rpm);
