@@ -13,6 +13,6 @@ typedef struct
 	int8_t  s2;
 }rc_info_t;
 
-void RemoteDataProcess(rc_info_t *rc,uint8_t tx_data[18]);
+void RemoteDataProcess(rc_info_t *rc,uint8_t rx_data[18]);
 
 #endif
