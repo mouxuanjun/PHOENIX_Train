@@ -1,6 +1,6 @@
 # 所有可执行文件
 /**/*.exe
-
+/Slave_can
 #keilIDE编辑器忽略项
 /**/MDK-ARM/*
 

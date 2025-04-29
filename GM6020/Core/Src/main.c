@@ -42,7 +42,15 @@
 
 /* Private macro -------------------------------------------------------------*/
 /* USER CODE BEGIN PM */
+void StartTask02(void const * argument){
+	while(1){
+		Motor_CTL_Message_Send(MSG_VOLTAGE_LOW, 2, 3, 4, 5); // 发送电压低的消息
+		osDelay(100);
+	}
+    
+  
 
+}
 /* USER CODE END PM */
 
 /* Private variables ---------------------------------------------------------*/
@@ -130,7 +138,9 @@ int main(void)
   /* USER CODE BEGIN 2 */
   MX_USB_DEVICE_Init();
   
-  can_filter_init();
+  CAN_Filter_Init(); // 初始化CAN过滤器
+  
+  // Motor_CTL_Message_Send(MSG_VOLTAGE_LOW, 2, 3, 4, 5); // 发送电压低的消息
   
   
   /* USER CODE END 2 */
@@ -147,7 +157,7 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   { 
-	
+    
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
