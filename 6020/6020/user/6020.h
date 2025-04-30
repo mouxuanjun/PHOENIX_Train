@@ -10,4 +10,5 @@ typedef struct {
 
 extern Motor6020 motor6020;
 
+
 void can_init(void);
