@@ -25,9 +25,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "dri_uart.h"
-#include "usb_device.h"
-#include "usbd_cdc_if.h"
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -49,14 +47,14 @@
 /* USER CODE BEGIN Variables */
 
 /* USER CODE END Variables */
-osThreadId defaultTaskHandle;
+osThreadId Motor_ControlTaHandle;
 
 /* Private function prototypes -----------------------------------------------*/
 /* USER CODE BEGIN FunctionPrototypes */
 
 /* USER CODE END FunctionPrototypes */
 
-void StartDefaultTask(void const * argument);
+void Motor_ControlTask(void const * argument);
 
 extern void MX_USB_DEVICE_Init(void);
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
@@ -104,9 +102,9 @@ void MX_FREERTOS_Init(void) {
   /* USER CODE END RTOS_QUEUES */
 
   /* Create the thread(s) */
-  /* definition and creation of defaultTask */
-  osThreadDef(defaultTask, StartDefaultTask, osPriorityNormal, 0, 128);
-  defaultTaskHandle = osThreadCreate(osThread(defaultTask), NULL);
+  /* definition and creation of Motor_ControlTa */
+  osThreadDef(Motor_ControlTa, Motor_ControlTask, osPriorityNormal, 0, 256);
+  Motor_ControlTaHandle = osThreadCreate(osThread(Motor_ControlTa), NULL);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
@@ -121,7 +119,7 @@ void MX_FREERTOS_Init(void) {
   * @retval None
   */
 /* USER CODE END Header_StartDefaultTask */
-void StartDefaultTask(void const * argument)
+__weak void Motor_ControlTask(void const * argument)
 {
   /* init code for USB_DEVICE */
   MX_USB_DEVICE_Init();
@@ -130,7 +128,6 @@ void StartDefaultTask(void const * argument)
   for(;;)
   {
     osDelay(10);
-    VOFA_Tx();
   }
   /* USER CODE END StartDefaultTask */
 }

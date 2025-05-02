@@ -23,9 +23,9 @@ int fputc(int ch, FILE *f)
 
 void VOFA_Tx(void) 
 {
-    printf("%d,%d\r\n",
-           GM6020.rotor_angle,
-		   GM6020.rotor_speed
-	       );
+    printf("%d,%.3f\r\n",
+            GM6020.rotor_angle,
+    (double)GM6020.Set_angle
+	         );
 }
 
