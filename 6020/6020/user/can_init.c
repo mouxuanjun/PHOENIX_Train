@@ -1,7 +1,8 @@
 #include <can.h>
 #include <6020.h>
 
-void can_init(void) {
+void can_init(void) //can过滤器初始化
+{
     CAN_FilterTypeDef cf;
     cf.FilterBank = 0; 
     cf.SlaveStartFilterBank = 14;

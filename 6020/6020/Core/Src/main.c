@@ -20,18 +20,23 @@
 #include "main.h"
 #include "cmsis_os.h"
 #include "can.h"
-#include "usb_device.h"
+#include "dma.h"
+#include "usart.h"
 #include "gpio.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "can.h"
 #include "6020.h"
+#include "pid.h"
+#include "dr16.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
-Motor6020 motor6020;
+Motor6020rx motor6020rx;
+motor_t motor_data; 
+rc_info_t dr16_receive;
+uint8_t rx_buffer[18];
 /* USER CODE END PTD */
 
 /* Private define ------------------------------------------------------------*/
@@ -91,11 +96,14 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
+  MX_DMA_Init();
   MX_CAN1_Init();
+  MX_USART3_UART_Init();
+  MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
   can_init();
 	int8_t CDC_Init_FS(void);
-	MX_USB_DEVICE_Init();
+	HAL_UART_Receive_DMA(&huart3, rx_buffer, 18);
   /* USER CODE END 2 */
 
   /* Call init function for freertos objects (in cmsis_os2.c) */
@@ -111,7 +119,7 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-    CDC_Transmit_FS(motor6020,sizeof(motor6020));
+
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */

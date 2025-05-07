@@ -48,6 +48,8 @@
 
 /* USER CODE END Variables */
 osThreadId defaultTaskHandle;
+osThreadId Motor_controlHandle;
+osThreadId poweroffHandle;
 
 /* Private function prototypes -----------------------------------------------*/
 /* USER CODE BEGIN FunctionPrototypes */
@@ -55,8 +57,9 @@ osThreadId defaultTaskHandle;
 /* USER CODE END FunctionPrototypes */
 
 void StartDefaultTask(void const * argument);
+void motor_control(void const * argument);
+void Power_off(void const * argument);
 
-extern void MX_USB_DEVICE_Init(void);
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
 
 /* GetIdleTaskMemory prototype (linked to static allocation support) */
@@ -106,6 +109,14 @@ void MX_FREERTOS_Init(void) {
   osThreadDef(defaultTask, StartDefaultTask, osPriorityNormal, 0, 128);
   defaultTaskHandle = osThreadCreate(osThread(defaultTask), NULL);
 
+  /* definition and creation of Motor_control */
+  osThreadDef(Motor_control, motor_control, osPriorityNormal, 0, 256);
+  Motor_controlHandle = osThreadCreate(osThread(Motor_control), NULL);
+
+  /* definition and creation of poweroff */
+  osThreadDef(poweroff, Power_off, osPriorityRealtime, 0, 128);
+  poweroffHandle = osThreadCreate(osThread(poweroff), NULL);
+
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
   /* USER CODE END RTOS_THREADS */
@@ -121,8 +132,6 @@ void MX_FREERTOS_Init(void) {
 /* USER CODE END Header_StartDefaultTask */
 void StartDefaultTask(void const * argument)
 {
-  /* init code for USB_DEVICE */
-  MX_USB_DEVICE_Init();
   /* USER CODE BEGIN StartDefaultTask */
   /* Infinite loop */
   for(;;)
@@ -130,6 +139,42 @@ void StartDefaultTask(void const * argument)
     osDelay(1);
   }
   /* USER CODE END StartDefaultTask */
+}
+
+/* USER CODE BEGIN Header_motor_control */
+/**
+* @brief Function implementing the Motor_control thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_motor_control */
+__weak void motor_control(void const * argument)
+{
+  /* USER CODE BEGIN motor_control */
+  /* Infinite loop */
+  for(;;)
+  {
+    osDelay(1);
+  }
+  /* USER CODE END motor_control */
+}
+
+/* USER CODE BEGIN Header_Power_off */
+/**
+* @brief Function implementing the poweroff thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_Power_off */
+__weak void Power_off(void const * argument)
+{
+  /* USER CODE BEGIN Power_off */
+  /* Infinite loop */
+  for(;;)
+  {
+    osDelay(1);
+  }
+  /* USER CODE END Power_off */
 }
 
 /* Private application code --------------------------------------------------*/
