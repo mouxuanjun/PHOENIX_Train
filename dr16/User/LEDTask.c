@@ -2,7 +2,7 @@
 #include "main.h"
 #include "dr16.h"
 
-extern rc_info_t rc;
+rc_info_t rc;
 
 void LEDTask(void const * argument)
 {
