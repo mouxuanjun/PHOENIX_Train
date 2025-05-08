@@ -53,8 +53,7 @@
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-extern rc_info_t rc;
-extern uint8_t rx_data[18];
+
 /* USER CODE END 0 */
 
 /* External variables --------------------------------------------------------*/
@@ -62,7 +61,8 @@ extern DMA_HandleTypeDef hdma_usart3_rx;
 extern TIM_HandleTypeDef htim14;
 
 /* USER CODE BEGIN EV */
-
+extern rc_info_t rc;
+extern uint8_t rx_data[18];
 /* USER CODE END EV */
 
 /******************************************************************************/
