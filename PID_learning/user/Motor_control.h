@@ -8,6 +8,7 @@
 #include "dri_uart.h"
 #include "cmsis_os.h"
 #include <math.h>
+#include "dr16.h"
 
 extern Moto_GM6020_t GM6020;
 

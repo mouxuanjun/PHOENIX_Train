@@ -18,7 +18,7 @@ void pid_init(pid_struct_t *pid,
 void pid_Protect(pid_struct_t *pid,float angle_max)
 { 
   float half_angle = angle_max/2;
-	if(pid->ref[0] - pid->fdb > half_angle)
+	if(pid->ref[0] - pid ->fdb > half_angle)
 	{
 		pid->fdb+=angle_max;
 	}

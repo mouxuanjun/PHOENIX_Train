@@ -30,6 +30,7 @@
 #include "GM6020.h"
 #include "dr_can.h"
 #include "pid.h"
+#include "dr16.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -39,7 +40,6 @@ Moto_GM6020_t GM6020;
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-#define pi 3.14159265358979323846
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -50,6 +50,8 @@ Moto_GM6020_t GM6020;
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
+rc_info_t rc_ctrl;
+uint8_t rx_data[18];
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -96,9 +98,11 @@ int main(void)
   MX_DMA_Init();
   MX_CAN1_Init();
   MX_USART1_UART_Init();
+  MX_USART3_UART_Init();
   /* USER CODE BEGIN 2 */
   CAN_Filter_Init();
   MX_USB_DEVICE_Init();
+	HAL_UART_Receive_DMA(&huart3, rx_data, 18);
   /* USER CODE END 2 */
 
   /* Call init function for freertos objects (in cmsis_os2.c) */
