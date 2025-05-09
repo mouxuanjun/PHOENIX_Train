@@ -25,9 +25,12 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include "queue.h"
 #include "dri_uart.h"
 #include "usb_device.h"
 #include "usbd_cdc_if.h"
+#include "pid.h"
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -37,7 +40,8 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-
+#define MSG_MAGIC 0x00FF1234    //消息头用于分别数据，此处表示左开关
+#define MSG_MAGIC2 0x00FF1235   //用于分别数据，表示是yaw轴
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -47,9 +51,15 @@
 
 /* Private variables ---------------------------------------------------------*/
 /* USER CODE BEGIN Variables */
-
+//extern QueueHandle_t Usb_quene;
+extern Moto_GM6020_t GM6020;
+//uint16_t target=100;
 /* USER CODE END Variables */
 osThreadId defaultTaskHandle;
+osThreadId GM6020_TaskHandle;
+osThreadId GM6020_Task_innHandle;
+osMessageQId Usb_queneHandle;
+osMessageQId RCqueueHandle;
 
 /* Private function prototypes -----------------------------------------------*/
 /* USER CODE BEGIN FunctionPrototypes */
@@ -57,6 +67,8 @@ osThreadId defaultTaskHandle;
 /* USER CODE END FunctionPrototypes */
 
 void StartDefaultTask(void const * argument);
+void StartTask02(void const * argument);
+void StartTask03(void const * argument);
 
 extern void MX_USB_DEVICE_Init(void);
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
@@ -99,6 +111,15 @@ void MX_FREERTOS_Init(void) {
   /* start timers, add new ones, ... */
   /* USER CODE END RTOS_TIMERS */
 
+  /* Create the queue(s) */
+  /* definition and creation of Usb_quene */
+  osMessageQDef(Usb_quene, 16, uint32_t);
+  Usb_queneHandle = osMessageCreate(osMessageQ(Usb_quene), NULL);
+
+  /* definition and creation of RCqueue */
+  osMessageQDef(RCqueue, 16, uint32_t);
+  RCqueueHandle = osMessageCreate(osMessageQ(RCqueue), NULL);
+
   /* USER CODE BEGIN RTOS_QUEUES */
   /* add queues, ... */
   /* USER CODE END RTOS_QUEUES */
@@ -107,6 +128,14 @@ void MX_FREERTOS_Init(void) {
   /* definition and creation of defaultTask */
   osThreadDef(defaultTask, StartDefaultTask, osPriorityNormal, 0, 128);
   defaultTaskHandle = osThreadCreate(osThread(defaultTask), NULL);
+
+  /* definition and creation of GM6020_Task */
+  osThreadDef(GM6020_Task, StartTask02, osPriorityBelowNormal, 0, 512);
+  GM6020_TaskHandle = osThreadCreate(osThread(GM6020_Task), NULL);
+
+  /* definition and creation of GM6020_Task_inn */
+  osThreadDef(GM6020_Task_inn, StartTask03, osPriorityNormal, 0, 512);
+  GM6020_Task_innHandle = osThreadCreate(osThread(GM6020_Task_inn), NULL);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
@@ -130,11 +159,129 @@ void StartDefaultTask(void const * argument)
 	uint8_t minipc_tx_buff[18];
   for(;;)
   {
-	CDC_Transmit_FS(minipc_tx_buff, sizeof(minipc_tx_buff));
+	//CDC_Transmit_FS(minipc_tx_buff, sizeof(minipc_tx_buff));
 	VOFA_Tx();
     osDelay(10);
   }
   /* USER CODE END StartDefaultTask */
+}
+
+/* USER CODE BEGIN Header_StartTask02 */
+/**
+* @brief Function implementing the GM6020_Task thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_StartTask02 */
+void StartTask02(void const * argument)
+{
+  /* USER CODE BEGIN StartTask02 */
+	float received_target_angle;
+	uint32_t temp_message;
+	 BaseType_t xStatus1;
+	BaseType_t xStatus2;
+	uint8_t emergence_stop=0;
+	 const TickType_t xTicksToWait = 0;//静态变量
+	 init_sine_generator(0.0f);//初始化正弦波发生器
+	
+  /* Infinite loop */
+  for(;;)
+  {
+		//float target_position = generate_sine_target();
+		xStatus1 = xQueueReceive(RCqueueHandle, &temp_message, xTicksToWait);
+		  // 检查是否成功接收到数据
+    if (xStatus1 == pdPASS)
+    {
+		if(temp_message==MSG_MAGIC){
+				xQueueReceive(RCqueueHandle, &temp_message, xTicksToWait);
+
+				if(temp_message==1){
+				Send_GM6020_Motor_Message(0x00, 0x00, 0x00, 0x00);
+					emergence_stop=1;
+				}else{
+					emergence_stop=0;
+				}
+				
+			}else if(temp_message==MSG_MAGIC2){
+				xQueueReceive(RCqueueHandle, &received_target_angle, xTicksToWait);
+				
+				GM6020.Set_Angle+=(received_target_angle-1024)*0.1;
+				
+				if(GM6020.Set_Angle>=8192){
+					GM6020.Set_Angle=0;
+				}
+				if(GM6020.Set_Angle<0){
+					GM6020.Set_Angle+=8191;
+				}
+				
+			 }
+			
+			
+	  }
+		//GM6020.Set_Angle = generate_sine_target();
+		//float temp_result1=position_PID(target_position,GM6020.rotor_angle);
+		float temp_result1=position_PID(GM6020.Set_Angle,GM6020.rotor_angle);
+		
+		if(emergence_stop!=1){
+    xStatus2 = xQueueSend(Usb_queneHandle, &temp_result1, xTicksToWait);
+		}
+    if (xStatus2 != pdPASS)
+    {
+        // 队列已满或发送失败
+        printf("Warning: Failed to send to Usb_queue\r\n");
+    }
+    vTaskDelay(pdMS_TO_TICKS(1)); 
+		
+  }
+  /* USER CODE END StartTask02 */
+}
+
+/* USER CODE BEGIN Header_StartTask03 */
+/**
+* @brief Function implementing the GM6020_Task_inn thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_StartTask03 */
+void StartTask03(void const * argument)
+{
+  /* USER CODE BEGIN StartTask03 */
+	float received_target_velocity; // 用于存储从队列接收到的目标速度2
+  BaseType_t xStatus;             // 用于检查 xQueueReceive 的返回值
+	
+  const TickType_t xTicksToWait = portMAX_DELAY; // 设置等待时间
+  /* Infinite loop */
+  for(;;)
+  {
+		xStatus = xQueueReceive(Usb_queneHandle, &received_target_velocity, xTicksToWait);
+		  // 检查是否成功接收到数据
+    if (xStatus == pdPASS)
+    {
+      // 成功接收到数据，现在 received_target_velocity 包含了 Task02 发送的值
+      // 使用接收到的值作为速度PID的目标值
+			received_target_velocity=(received_target_velocity>=340)?340:received_target_velocity;
+			received_target_velocity=(received_target_velocity<=-340)?-340:received_target_velocity;
+			
+      float temp_result2 = velocity_PID(received_target_velocity, GM6020.rotor_speed);
+        //float temp_result2 = velocity_PID(GM6020.Set_Speed, GM6020.rotor_speed);
+      
+      // temp_result2 （目标电压）需要转换类型。
+      int16_t motor_command = (int16_t)temp_result2; 
+      motor_command = (motor_command > 25000) ? 25000 : motor_command; // 限制上限
+      motor_command = (motor_command < -25000) ? -25000 : motor_command; // 限制下限
+      GM6020.test=motor_command;
+			Send_GM6020_Motor_Message(motor_command,0x00, 0x00, 0x00); 
+    }
+    else
+    {
+      // 未能从队列接收到数据 
+      // 错误处理逻辑，发送一个安全的电机指令（0）
+      Send_GM6020_Motor_Message(0x00, 0x00, 0x00, 0x00);
+      // printf("Failed to receive from queue\n"); // 调试信息
+    }
+		osDelay(1);
+  }
+  /* USER CODE END StartTask03 */
 }
 
 /* Private application code --------------------------------------------------*/

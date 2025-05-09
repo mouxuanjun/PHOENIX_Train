@@ -10,7 +10,7 @@
       <TargetName>GM6020_Demo</TargetName>
       <ToolsetNumber>0x4</ToolsetNumber>
       <ToolsetName>ARM-ADS</ToolsetName>
-      <pCCUsed>5060960::V5.06 update 7 (build 960)::.\ARM_Compiler_5.06u7</pCCUsed>
+      <pCCUsed>5060750::V5.06 update 6 (build 750)::.\ARMCC</pCCUsed>
       <uAC6>0</uAC6>
       <TargetOption>
         <TargetCommonOption>
@@ -190,7 +190,7 @@
             <hadIRAM2>1</hadIRAM2>
             <hadIROM2>0</hadIROM2>
             <StupSel>8</StupSel>
-            <useUlib>0</useUlib>
+            <useUlib>1</useUlib>
             <EndSel>0</EndSel>
             <uLtcg>0</uLtcg>
             <nSecure>0</nSecure>
@@ -358,7 +358,7 @@
               <MiscControls></MiscControls>
               <Define></Define>
               <Undefine></Undefine>
-              <IncludePath>../Core/Inc</IncludePath>
+              <IncludePath>../Core/Inc;../Drivers/CMSIS/Include</IncludePath>
             </VariousControls>
           </Aads>
           <LDads>
@@ -949,6 +949,36 @@
               <FileName>dri_uart.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\User\dri_uart.h</FilePath>
+            </File>
+            <File>
+              <FileName>pid.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\pid.c</FilePath>
+            </File>
+            <File>
+              <FileName>pid.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\User\pid.h</FilePath>
+            </File>
+            <File>
+              <FileName>usb_handel.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\User\usb_handel.h</FilePath>
+            </File>
+            <File>
+              <FileName>usb_handel.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\usb_handel.c</FilePath>
+            </File>
+            <File>
+              <FileName>Remote_Control.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\Remote_Control.c</FilePath>
+            </File>
+            <File>
+              <FileName>Remote_Control.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\User\Remote_Control.h</FilePath>
             </File>
           </Files>
         </Group>
