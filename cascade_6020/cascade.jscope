@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<JScopeProject>
+    <FileVersion major="1" minor="1" />
+    <Project>
+        <Configuration>
+            <JLink>
+                <Options Connection="1" IsRTTSession="0" IsRTTWithTimeStamp="0" IsRTTPlus="0" SamplingPeriod="100" SerialNo="0" JTAG_IRPre="0" JTAG_DRPre="0" IP="" TargetDevice="STM32F407IG" TargetInterface="SWD" InterfaceSpeed="4000" />
+            </JLink>
+            <ElfFile Name="C:\Users\29039\Desktop\stm32project\cascade\MDK-ARM\cascade\cascade.axf" />
+            <Scope>
+                <Options TimeResolutionUs="1000000" />
+            </Scope>
+            <Trigger>
+                <Options Level="0" Symbol="ecd" On="0" Auto="0" Rise="0" Fall="0" />
+            </Trigger>
+        </Configuration>
+        <Windows>
+            <Graph Show="1" />
+            <Watch Show="1" />
+        </Windows>
+        <SelectedSymbols>
+            <Symbol>
+                <Options Name="ecd" Address="0x20000534" Type="unsigned short" TypeID="7" Size="2" GraphColorRed="255" GraphColorGreen="255" GraphColorBlue="0" YMinSampled="1.79769e+308" YMaxSampled="-1.79769e+308" YAvgSampled="0" Offset="0" ShowInGraph="1" YOffset="0" IsAutoConfig="0" YResolution="1" MaxValue="65535" File="C:\Users\29039\Desktop\stm32project\cascade\MDK-ARM/..\User\can\can_rx_tx.h" DrawStyle="0" NameWithParents=".motor_chassis[4].ecd" />
+            </Symbol>
+            <Symbol>
+                <Options Name="speed_rpm" Address="0x20000536" Type="short" TypeID="11" Size="2" GraphColorRed="170" GraphColorGreen="255" GraphColorBlue="0" YMinSampled="1.79769e+308" YMaxSampled="-1.79769e+308" YAvgSampled="0" Offset="0" ShowInGraph="1" YOffset="0" IsAutoConfig="0" YResolution="1" MaxValue="32767" File="C:\Users\29039\Desktop\stm32project\cascade\MDK-ARM/..\User\can\can_rx_tx.h" DrawStyle="0" NameWithParents=".motor_chassis[4].speed_rpm" />
+            </Symbol>
+            <Symbol>
+                <Options Name="target_angle" Address="0x2000001C" Type="float" TypeID="1" Size="4" GraphColorRed="255" GraphColorGreen="0" GraphColorBlue="0" YMinSampled="1.79769e+308" YMaxSampled="-1.79769e+308" YAvgSampled="0" Offset="0" ShowInGraph="1" YOffset="0" IsAutoConfig="0" YResolution="1" MaxValue="-2147483648" File="C:\Users\29039\Desktop\stm32project\cascade\MDK-ARM/../Core/Src/main.c" DrawStyle="0" NameWithParents=".target_angle" />
+            </Symbol>
+        </SelectedSymbols>
+    </Project>
+</JScopeProject>
